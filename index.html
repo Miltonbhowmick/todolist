@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div class="input-group">
+            <input type="text" id="new-task" placeholder="Enter an activity...">
+            <input type="date" id="task-due-date" placeholder="Due date"> <!-- Due date input -->
+            <button onclick="addTask()">+</button>
+        </div>
+        <ul id="task-list">
+            <!-- Task items will be added here dynamically -->
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
