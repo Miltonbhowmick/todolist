@@ -1,23 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do List</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="toggle-box">
+        <span class="icon sun" data-icon="&#9728"></span>
+        <div class="toggling" id="hit-toggle" onclick="toggleDataTheme(true)"><button class="toggle-btn"></button></div>
+        <span class="icon moon" data-icon="&#9789"></span>
+    </div>
     <div id="app">
-        <div class="input-group">
-            <input type="text" id="new-task" placeholder="Enter an activity...">
-            <input type="date" id="task-due-date">
-            <input type="text" id="task-category" placeholder="Category"> <!-- Category input field -->
-            <button onclick="addTask()">+</button>
-        </div>        
-        <ul id="task-list">
-            <!-- Task items will be added here dynamically -->
-        </ul>
+      <div class="input-group">
+        <input type="text" id="new-task" placeholder="Enter an activity..." />
+        <input type="date" id="task-due-date" />
+        <input type="text" id="task-category" placeholder="Category" />
+        <!-- Category input field -->
+        <button onclick="addTask()">+</button>
+      </div>
+      <ul id="task-list">
+        <!-- Task items will be added here dynamically -->
+      </ul>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
