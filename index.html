@@ -13,16 +13,24 @@
         <span class="icon moon" data-icon="&#9789"></span>
     </div>
     <div id="app">
-      <div class="input-group">
-        <input type="text" id="new-task" placeholder="Enter an activity..." />
-        <input type="date" id="task-due-date" />
-        <input type="text" id="task-category" placeholder="Category" />
-        <!-- Category input field -->
-        <button onclick="addTask()">+</button>
-      </div>
-      <ul id="task-list">
-        <!-- Task items will be added here dynamically -->
-      </ul>
+        <div class="main-container">
+            <div class="task-form">
+                <div class="input-group">
+                    <input type="text" id="new-task" placeholder="Enter an activity..." />
+                </div>
+                <div class="input-group">
+                    <input type="date" id="task-due-date" />
+                </div>
+                <div class="input-group">
+                    <input type="text" id="task-category" placeholder="Category" />
+                </div>
+                <!-- Category input field -->
+                <button class="add-task-btn" onclick="addTask()">+</button>
+            </div>
+            <ul id="task-list">
+                <!-- Task items will be added here dynamically -->
+            </ul>
+        </div>
     </div>
     <script src="script.js"></script>
   </body>
