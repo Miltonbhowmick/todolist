@@ -7,7 +7,7 @@ body, html {
   #app {
     width: 100%;
     max-width: 400px;
-    margin: 0 auto;
+    margin: 20px auto; /* Increased top and bottom margin for overall app */
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
@@ -17,21 +17,25 @@ body, html {
     margin-bottom: 20px;
   }
   
+  .input-group input,
+  .input-group button {
+    padding: 10px;
+  }
+  
   .input-group input {
     flex-grow: 1;
-    padding: 10px;
+    margin-right: 8px; /* Ensure there's space between the input and the button */
     border: 2px solid #ccc;
-    border-radius: 4px 0 0 4px;
+    border-radius: 4px;
     outline: none;
   }
   
   .input-group button {
-    padding: 10px;
     border: none;
     background-color: #4CAF50;
     color: white;
     cursor: pointer;
-    border-radius: 0 4px 4px 0;
+    border-radius: 4px;
   }
   
   .input-group button:hover {
@@ -41,28 +45,35 @@ body, html {
   ul {
     list-style: none;
     padding: 0;
+    margin: 0; /* Reset default margin for unordered list */
   }
   
   li {
-    padding: 10px;
+    padding: 15px; /* Increased padding for each list item for more space */
     border: 1px solid #ccc;
-    margin-top: -1px; /* Prevent double borders */
+    margin-top: 10px; /* Increased space between list items */
     background-color: #f9f9f9;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Vertically center align the list content */
   }
   
   li .task-name {
     flex-grow: 1;
+    margin-right: 10px; /* Space after task name */
   }
   
-  li .delete-btn {
+  li .task-due-date,
+  li .task-category {
+    white-space: nowrap; /* Prevent wrapping of content */
+    margin-right: 10px; /* Space after due date and category */
+  }
+  
+  li .delete-btn,
+  li .done-btn {
     margin-left: 10px;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    color: #ff6347;
   }
   
   li .completed {
@@ -72,7 +83,43 @@ body, html {
   li:nth-child(odd) {
     background-color: #efefef;
   }
-
+  
   .overdue {
     color: red; 
-}
+  }
+  
+  /* Responsive Design: Adjust for small screens */
+  @media (max-width: 600px) {
+    .input-group {
+      flex-direction: column;
+    }
+  
+    .input-group input,
+    .input-group button {
+      width: 100%; /* Full width for small screens */
+      margin: 5px 0; /* Add space between stacked elements */
+    }
+  
+    .input-group button {
+      border-radius: 4px; /* Adjust border radius for the button */
+    }
+  
+    /* Adjust list item layout for small screens */
+    li {
+      flex-direction: column;
+      align-items: flex-start; /* Align items to the start on small screens */
+    }
+  
+    li .task-name,
+    li .task-due-date,
+    li .task-category {
+      margin-right: 0; /* Remove right margin for list item elements on small screens */
+      margin-bottom: 5px; /* Add space between elements when stacked */
+    }
+  
+    li .delete-btn,
+    li .done-btn {
+      margin-left: 0; /* Remove left margin for buttons on small screens */
+    }
+  }
+  
